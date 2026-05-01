@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cache Memory Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>Cache Memory Simulator</h1>
+
+<!-- Inputs -->
+<input type="number" id="cacheSize" placeholder="Cache Size">
+<input type="text" id="addresses" placeholder="Addresses e.g. 1,2,3,4">
+
+<select id="mapping">
+    <option value="direct">Direct Mapping</option>
+    <option value="fifo">FIFO (Fully Associative)</option>
+    <option value="lru">LRU (Fully Associative)</option>
+    <option value="set">Set Associative</option>
+</select>
+
+<br>
+
+<button onclick="runSimulation()">Run Simulation</button>
+
+<div id="result"></div>
+
+<h2>Step-by-Step</h2>
+<div id="steps"></div>
+
+<h2>Hit / Miss Table</h2>
+<table border="1" style="margin:auto; margin-top:10px; color:white;">
+    <thead>
+        <tr>
+            <th>Address</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<h2>Graph</h2>
+<canvas id="chart" width="400" height="200"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
